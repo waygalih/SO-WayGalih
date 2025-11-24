@@ -301,7 +301,6 @@ const PerusahaanPageContent = ({ onSubmit }: PerusahaanPageContentProps) => {
                       id="akta_lembaga"
                       name="akta_lembaga"
                       accept=".jpg,.jpeg,.png,.pdf"
-                      required
                       className={fileInputClasses}
                     />
                     <p className="text-xs text-slate-500">

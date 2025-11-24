@@ -397,7 +397,6 @@ const SKTMSPageContent = ({ onSubmit }: SKTMSPageContentProps) => {
                       id="surat_keterangan"
                       name="surat_keterangan"
                       accept=".jpg,.jpeg,.png,.pdf"
-                      required
                       className={fileInputClasses}
                     />
                   </div>
