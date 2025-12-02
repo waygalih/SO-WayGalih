@@ -94,31 +94,6 @@ const PengajuanDetail = ({ detail, statusLabel }: PengajuanDetailProps) => {
             </section>
           </div>
 
-          <section className="mt-6">
-            <h3 className="text-base font-semibold text-[#0a3d91]">Lampiran Berkas</h3>
-            {detail.lampiran?.length ? (
-              <ul className="mt-3 grid gap-2 text-sm text-slate-600 md:grid-cols-2">
-                {detail.lampiran.map((lampiran) => (
-                  <li
-                    key={lampiran.label}
-                    className="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                  >
-                    <span className="truncate pr-4">{lampiran.label}</span>
-                    <a
-                      href={lampiran.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-semibold text-[#0a3d91] underline-offset-4 hover:underline"
-                    >
-                      Lihat
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-3 text-sm text-slate-500">Lampiran ada di spreadsheet.</p>
-            )}
-          </section>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <Link

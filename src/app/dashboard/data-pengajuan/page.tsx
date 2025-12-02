@@ -87,12 +87,17 @@ export default function DataPengajuan() {
   const filteredData = useMemo(() => {
     const keyword = searchTerm.trim().toLowerCase();
     return data.filter((item) => {
-      const status = item.status.toLowerCase();
+      const status = item.status?.toLowerCase() || '';
+      const nama = item.nama?.toLowerCase() || '';
+      const jenisSurat = item.jenisSurat?.toLowerCase() || '';
+      
       const matchesKeyword =
         keyword.length === 0 ||
-        item.nama.toLowerCase().includes(keyword) ||
-        item.jenisSurat.toLowerCase().includes(keyword);
+        nama.includes(keyword) ||
+        jenisSurat.includes(keyword);
+      
       if (!matchesKeyword) return false;
+      
       if (statusFilter === "all") return true;
       if (statusFilter === "selesai") return status.includes("selesai");
       if (statusFilter === "ditolak") return status.includes("ditolak");
@@ -148,7 +153,6 @@ export default function DataPengajuan() {
     handleRejectModalClose();
   };
 
-  // ✅ PERBAIKAN TERPENTING (URL DETAIL BENAR SESUAI STRUKTUR NESTED)
   const handleViewDetail = (item: Pengajuan) => {
     router.push(`/dashboard/data-pengajuan/${item.userId}/${item.id}`);
   };
